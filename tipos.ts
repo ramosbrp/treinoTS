@@ -29,3 +29,22 @@ console.log(StatusAprovacao);
 // Any
 const retornoDaAPI: any[] = [123, "Bruno", false];
 
+// Void
+function printarNaTela(msg: string): void {
+    console.log(msg);
+}
+
+// Null e Undefined
+const u: undefined = undefined;
+const n: null = null;
+
+// Object
+function criar(objeto: object) {
+    // ...
+}
+
+criar({
+    propriedade: 1,
+});
+// criar("Bruno") --|-- Dá erro
+
