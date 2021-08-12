@@ -68,3 +68,28 @@ function exibirNota(nota: number | string) {
 };
 
 exibirNota("10");
+
+// Alias
+type Funcionario = {
+    nome: string;
+    sobrenome: string;
+    daNascimento: Date
+};
+
+// type Funcionarios = Array<Funcionario>;
+const funcionarios: Array<Funcionario> = [{
+    nome: "Bruno",
+    sobrenome: "Ramos",
+    daNascimento: new Date()
+}, {
+    nome: "Pedro",
+    sobrenome: "Ramos",
+    daNascimento: new Date()
+}];
+
+function tratarFuncionarios(funcionarios: Array<Funcionario>) {
+    for(let funcionario of funcionarios) {
+        console.log(`Nome do funcionário ${funcionario.nome}`)
+    }
+};
+
