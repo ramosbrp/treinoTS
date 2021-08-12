@@ -62,3 +62,9 @@ function falha() {
     return erro("Algo falhou");
 };
 
+// Union types
+function exibirNota(nota: number | string) {
+    console.log(`A nota é ${nota}`);
+};
+
+exibirNota("10");
