@@ -21,7 +21,7 @@ enum StatusAprovacao {
     Aprovado = "001",
     Pendente = "002",
     Rejeitado = "003"
-}
+};
 
 const statusDaAprovacao: StatusAprovacao = StatusAprovacao.Aprovado;
 console.log(StatusAprovacao);
@@ -32,7 +32,7 @@ const retornoDaAPI: any[] = [123, "Bruno", false];
 // Void
 function printarNaTela(msg: string): void {
     console.log(msg);
-}
+};
 
 // Null e Undefined
 const u: undefined = undefined;
@@ -41,10 +41,24 @@ const n: null = null;
 // Object
 function criar(objeto: object) {
     // ...
-}
+};
 
 criar({
     propriedade: 1,
 });
 // criar("Bruno") --|-- Dá erro
+
+// Never
+function loopInfinito(): never {
+    while(true) { };
+};
+
+function erro(mensagem: string): never {
+    throw new Error(mensagem);
+};
+
+// O TS inferiru a função como never
+function falha() {
+    return erro("Algo falhou");
+};
 
