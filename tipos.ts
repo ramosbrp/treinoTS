@@ -93,3 +93,20 @@ function tratarFuncionarios(funcionarios: Array<Funcionario>) {
     }
 };
 
+// Valores nulos e opcionais
+let altura = 1.6;
+altura = null;
+
+type Contato = {
+    nome: string;
+    telefone1: string;
+    // O ? Mosta pro TS que este campo é opcional
+    telefone2?: string | null;
+}
+
+const contato: Contato = {
+    nome: 'Bruno',
+    telefone1: '12345679',
+    telefone2: null
+}
+
