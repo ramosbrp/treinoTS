@@ -1,7 +1,6 @@
 // class Data {
 //     mes: number;
 //     ano: number;
-
 //     // Vai utilizar o valor 1970 como valor padrão
 //     // Posso definir o public aqui e posso tirar lá de cima e o his também
 //     constructor (public dia: number, mes: number, ano: number = 1970) {
@@ -9,42 +8,35 @@
 //         this.ano = ano;
 //     }
 // }
-
 // const data = new Data(1, 1, 20201);
 // console.log(data.dia);
-
 // // Não funciona pois mês está como privado
 // console.log(data.mes);
-
 // const data2 = new Data(1,1);
-
-class Carro {
-
-    private velocidadeAtual: number = 0;
-
-    constructor (
-        public marca: string,
-        public modelo: string,
-        private velocidadeMaxima: number =220
-
-        ) {}   
-    
-    private alterarVelocidade(delta: number) {
+var Carro = /** @class */ (function () {
+    function Carro(marca, modelo, velocidadeMaxima) {
+        if (velocidadeMaxima === void 0) { velocidadeMaxima = 220; }
+        this.marca = marca;
+        this.modelo = modelo;
+        this.velocidadeMaxima = velocidadeMaxima;
+        this.velocidadeAtual = 0;
+    }
+    Carro.prototype.alterarVelocidade = function (delta) {
         // FAÇO AS VALIDAÇÕES DE ACELERAÇÃO E FRENAGEM
         // this.velocidadeAtual = xxx
         if (this.velocidadeAtual + delta <= this.velocidadeMaxima) {
-           return this.velocidadeAtual + delta;
-        }
-    }
-
-    acelerar() {
+            return this.velocidadeAtual + delta;
+         }
+    };
+    Carro.prototype.acelerar = function () {
         this.alterarVelocidade(5);
-    }
-
-    frear() {
+    };
+    Carro.prototype.frear = function () {
         this.alterarVelocidade(-5);
-    }
-}
-const carro = new Carro('Chevrolet', "Prisma");
+    };
+    return Carro;
+}());
+var carro = new Carro('Chevrolet', "Prisma");
+var resultado = carro.acelerar();
 
-console.log (carro.acelerar());
+console.log (resultado);
